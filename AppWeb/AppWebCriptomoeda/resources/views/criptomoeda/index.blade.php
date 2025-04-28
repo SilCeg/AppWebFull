@@ -2,7 +2,7 @@
 @section('content')
 
 <h1> Lista de Criptomoedas </h1>
-<a href="{{ route(name:'criptomoeda.create') }}" class="btn btn-primary btn-lg" >Cadastrar</a>
+<a href="{{ route('criptomoedas.create') }}" class="btn btn-primary btn-lg" >Cadastrar</a>
 @if(count($criptos))
 <table class="table">
     <thead>

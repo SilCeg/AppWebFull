@@ -18,10 +18,30 @@ class CriptomoedaController extends Controller
     }
 
     public function store(Request $request){
-        Http::post($this->urlApi, $request->only(keys:'sigla','nome','valor'));
-        return redirect()->route(route:'criptomoedas.index');
-}
+        Http::post($this->urlApi, $request->only('sigla','nome','valor'));
+        return redirect()->route('criptomoedas.index');
+    }
 
 public function create(){
-    return view('criptomoedas.create');
-}}
+    return view('criptomoeda.create');
+}
+
+
+public function edit($id){
+    $response = Http::get("$this->urlApi/$id");
+    $cripto = $response->json()['data'] ?? null;
+    return view('criptomoedas.edit', compact('cripto'));
+}
+
+public function update(Request $request, $id){
+    Http::put("$this->urlApi/$id", $request->only('sigla', 'nome', 'valor'));
+    return redirect()->route('criptomoedas.index');
+}
+
+public function destroy($id){
+    Http::delete("$this->urlApi/$id");
+    return redirect()->route('criptomoedas.index');
+}
+
+
+}

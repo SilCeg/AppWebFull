@@ -1,6 +1,6 @@
-@extends(view:'layouts.app')
+@extends('layouts.app')
 
-@section(section:'content')
+@section('content')
 
 <h1>Nova Criptomoeda</h1>
 
@@ -22,7 +22,7 @@
 </div>
 
 <button type="submit" class="btn btn-primary"> Cadastrar </button>
-<a hre="{{ route(name:'criptomoedas.index') }}" class="btn btn-secondary"> Cancelar </a>  
+<a hre="{{ route('criptomoedas.index') }}" class="btn btn-secondary"> Cancelar </a>  
 
 </form>
 @endsection

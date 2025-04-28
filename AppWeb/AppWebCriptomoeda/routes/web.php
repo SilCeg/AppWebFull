@@ -5,6 +5,6 @@ use App\Http\Controllers\CriptomoedaController;
 
 Route::get('/', [CriptomoedaController::class,'index'])->name('criptomoedas.index');
 
-Route::get('/create', [CriptomoedaController::class,'create'])->name(name:'criptomoedas.create');
+Route::get('/create', [CriptomoedaController::class,'create'])->name('criptomoedas.create');
 
-route::post('/store', [CriptomoedaController::class,'store'])->name(name:'criptomoedas.store');
+route::post('/store', [CriptomoedaController::class,'store'])->name('criptomoedas.store');
