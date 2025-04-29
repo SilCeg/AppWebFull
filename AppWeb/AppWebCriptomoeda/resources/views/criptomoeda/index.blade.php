@@ -20,7 +20,10 @@
             <th scope="row">{{$cripto['sigla']}}</th>
             <td>{{$cripto['nome']}}</td>
             <td> R$ {{number_format($cripto['valor'],2, ',','.')}} </td>
-            <td>Editar|Excluir</td>
+            <td>
+                <a href="{{route('criptomoedas.edit', $cripto['id'])}}" class="btn btn-warning btn-sm"> Editar</a>
+                <a href="{{route('criptomoedas.destroy', $cripto['id'])}}" class="btn btn-warning btn-sm" onclick="return confirm('Tem certeza?')"> Excluir</a>
+            </td>
         </tr>
 
         @endforeach

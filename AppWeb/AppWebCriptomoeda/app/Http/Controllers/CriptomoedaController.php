@@ -30,7 +30,7 @@ public function create(){
 public function edit($id){
     $response = Http::get("$this->urlApi/$id");
     $cripto = $response->json()['data'] ?? null;
-    return view('criptomoedas.edit', compact('cripto'));
+    return view('criptomoeda.edit', compact('cripto'));
 }
 
 public function update(Request $request, $id){

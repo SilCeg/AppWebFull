@@ -22,7 +22,7 @@
 </div>
 
 <button type="submit" class="btn btn-primary"> Cadastrar </button>
-<a hre="{{ route('criptomoedas.index') }}" class="btn btn-secondary"> Cancelar </a>  
+<a href="{{ route('criptomoedas.index') }}" class="btn btn-secondary"> Cancelar </a>  
 
 </form>
 @endsection
